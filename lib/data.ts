@@ -9,11 +9,11 @@ const data: Data = {
     { name: '여행.꿀팁', href: '/tips' },
   ],
   adminMenus: [
-    { name: 'Overview', href: '/admin/overview' },
-    { name: 'Posts', href: '/admin/posts' },
-    { name: 'Users', href: '/admin/users' },
-    { name: 'Reviews', href: '/admin/reviews' },
-    { name: 'Settings', href: '/admin/settings' },
+    { name: '관리자', href: '/admin/overview' },
+    { name: '글', href: '/admin/posts' },
+    { name: '회원', href: '/admin/users' },
+    { name: '댓글', href: '/admin/reviews' },
+    { name: '설정', href: '/admin/settings' },
   ],
 };
 

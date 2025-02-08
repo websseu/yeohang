@@ -1,9 +1,9 @@
-const name = 'webstoryboy';
-const slogan = 'Learn Web Development';
+const name = '여행(YeoHang)';
+const slogan = '세상을 탐험하다.';
 const description =
-  'Comprehensive tutorials on web development, covering React, CSS, JavaScript, and more. Build your skills with interactive guides and projects.';
-const copyright = `Copyright © 2025 webstoryboy. All rights reserved.`;
-const site = 'https://webstoryboy.com';
+  '숨겨진 여행지, 유용한 여행 팁, 모험 가이드까지! 나만의 특별한 여행을 계획하고 새로운 경험을 발견하세요.';
+const copyright = 'Copyright © 2025 YeoHang. All rights reserved.';
+const site = 'https://yeohang.com';
 
 export const APP_NAME = process.env.NEXT_APP_NAME || name;
 export const APP_SLOGAN = process.env.NEXT_APP_SLOGAN || slogan;
