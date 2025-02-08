@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Getting Started
 
-## Getting Started
+Comprehensive tutorials on web development, covering React, CSS, JavaScript, and more. Build your skills with interactive guides and projects.
 
-First, run the development server:
+https://webstoryboy.com/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## vscode-extensions
+
+1.  eslint
+2.  Prettier - Code formatter
+3.  Material Icon Theme
+4.  Tailwind CSS IntelliSense
+5.  es7+ react snippets
+6.  pretty typescript errors
+
+## setting.json
+
+```js
+{
+  // UI
+  "workbench.iconTheme": "material-icon-theme",
+  "explorer.compactFolders": false,
+
+  // Editor
+  "editor.minimap.enabled": false,
+  "editor.fontSize": 13,
+  "editor.formatOnSave": true,
+
+  // Prettier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## document
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. based on docs at https://nextjs.org/docs/app/getting-started/installation run
+2. based on docs at https://ui.shadcn.com/docs/installation/next run
+3. based on docs at https://react-icons.github.io/react-icons/ run
+4. based on docs at https://zod.dev/ run
+5. based on docs at https://mongoosejs.com/docs/guide.html/ run
+6. based on docs at https://vercel.com/ run
+7. based on docs at https://authjs.dev/ run
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 01. install
 
-## Learn More
+```
+npx create-next-app@latest ./
+npx shadcn@latest init
+npm i react-icons
+npm i mongoose
+npm i mongodb
+npm i @auth/mongodb-adapter
+npm i zod
+npm i next-auth@beta
+npm i bcryptjs
+npm i --save-dev @types/bcryptjs
+npm i react-hook-form
+npm i @hookform/resolvers
+npx auth secret
 
-To learn more about Next.js, take a look at the following resources:
+npm i react-syntax-highlighter
+npm i --save-dev @types/react-syntax-highlighter
+npm i react-intersection-observer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+
+```
+
+```
+npx shadcn@latest add button
+npx shadcn@latest add card
+npx shadcn@latest add toast
+npx shadcn@latest add input
+npx shadcn@latest add carousel
+npx shadcn@latest add table
+npx shadcn@latest add form
+npx shadcn@latest add dropdown-menu
+npx shadcn@latest add dialog
+npx shadcn@latest add alert-dialog
+npx shadcn@latest add textarea
+npx shadcn@latest add checkbox
+npx shadcn@latest add progress
+npx shadcn@latest add popover
+```
+
+```
+npx shadcn@latest add button card toast input carousel table form dropdown-menu dialog alert-dialog textarea checkbox progress popover
+npm i embla-carousel-autoplay
+```
