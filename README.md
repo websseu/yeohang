@@ -66,14 +66,6 @@ npm i --save-dev @types/react-syntax-highlighter
 npm i react-intersection-observer
 
 
-
-
-
-
-
-
-
-
 ```
 
 ```

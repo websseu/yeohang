@@ -1,9 +1,9 @@
 import { APP_COPYRIGHT, APP_NAME } from '@/lib/constants';
-// import { auth } from '@/auth';
-// import Image from 'next/image';
+import { auth } from '@/auth';
+import Image from 'next/image';
 
 export default async function Footer() {
-  // const session = await auth();
+  const session = await auth();
 
   return (
     <footer className='footer__container'>
@@ -15,7 +15,7 @@ export default async function Footer() {
       </div>
 
       {/* 사용자 정보 표시 */}
-      {/* {session?.user ? (
+      {session?.user ? (
         <div className='mt-4 font-nanum'>
           <ul className='mt-2 space-y-1 text-sm text-muted-foreground'>
             {session.user.image && (
@@ -50,7 +50,7 @@ export default async function Footer() {
         <p className='text-sm text-muted-foreground mt-4'>
           로그인한 사용자가 없습니다.
         </p>
-      )} */}
+      )}
     </footer>
   );
 }

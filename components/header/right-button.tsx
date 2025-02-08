@@ -48,13 +48,13 @@ export default async function RightButton() {
         </DropdownMenuTrigger>
         {session ? (
           <DropdownMenuContent
-            className='w-56 mr-0 mt-2'
+            className='w-56 mr-0 mt-2 font-nanum'
             align='end'
             forceMount
           >
             <DropdownMenuLabel className='font-normal'>
               <div className='flex flex-col space-y-1 border-b pb-4'>
-                <p className='text-sm my-1 font-medium leading-none'>
+                <p className='text-base my-1 font-bold font-nanum leading-none '>
                   {session.user.name}
                 </p>
                 <p className='text-xs leading-none text-muted-foreground'>
