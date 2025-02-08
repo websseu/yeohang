@@ -197,13 +197,13 @@ pre {
 @layer components {
   /* header */
   .header__nav {
-    @apply fixed font-nanum font-bold md:absolute md:bottom-auto bottom-0 w-full md:top-[100px] z-50;
+    @apply fixed font-nanum font-bold md:absolute md:bottom-auto bottom-0 w-full md:top-[101px] z-50;
   }
   .header__nav ul {
     @apply flex md:justify-center justify-evenly bg-slate-900/20 backdrop-blur-md md:bg-transparent md:backdrop-blur-0;
   }
   .header__nav ul li a {
-    @apply md:bg-background md:py-0 py-3 bg-transparent px-2  text-sm inline-block;
+    @apply md:bg-background md:py-0 py-3 bg-transparent px-2 text-base inline-block;
   }
   .header__nav ul li a:hover {
     @apply text-gray-600;

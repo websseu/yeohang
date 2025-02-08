@@ -1,5 +1,5 @@
 import { auth } from '@/auth';
-import { getAllUsersLimit } from '@/lib/actions/user.actions';
+import { deleteUser, getAllUsersLimit } from '@/lib/actions/user.actions';
 import { redirect } from 'next/navigation';
 import {
   Table,
@@ -14,6 +14,7 @@ import { formatDate } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { IUser } from '@/lib/db/models/user.model';
 import Pagination from '@/components/page/pagination';
+import DeleteDialog from '@/components/admin/delete-dialog';
 
 export default async function AdminUserPage(props: {
   searchParams: Promise<{ page: string }>;
@@ -76,10 +77,14 @@ export default async function AdminUserPage(props: {
               </TableCell>
               <TableCell className='text-center'>{user.visitCount}</TableCell>
               <TableCell className='text-center'>
-                <Button variant='destructive' size='sm' className='mr-1'>
+                <Button
+                  variant='destructive'
+                  size='sm'
+                  className='mr-1 font-bold'
+                >
                   수정
                 </Button>
-                {/* <DeleteDialog id={user._id.toString()} action={deleteUser} /> */}
+                <DeleteDialog id={user._id.toString()} action={deleteUser} />
               </TableCell>
             </TableRow>
           ))}

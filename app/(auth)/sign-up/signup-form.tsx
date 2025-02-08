@@ -54,13 +54,11 @@ export default function SignUpForm() {
       const res = await registerUser(data); // 회원가입 API 호출
 
       if (!res.success) {
-        // 에러 메시지를 한글로 번역
         let errorMessage = res.error;
         if (res.error === 'email already exists') {
           errorMessage = '이메일이 이미 존재합니다.'; // 한글 메시지로 변경
         }
 
-        // 토스트로 에러 메시지 표시
         toast({
           title: '에러',
           description: errorMessage,
@@ -73,7 +71,7 @@ export default function SignUpForm() {
       toast({
         title: '회원가입 성공!',
         description: '🎉 환영합니다! 회원가입이 완료되었습니다.',
-        variant: 'default',
+        variant: 'destructive',
       });
 
       // 회원가입 성공 시 자동 로그인

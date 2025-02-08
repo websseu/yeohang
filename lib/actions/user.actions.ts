@@ -17,8 +17,8 @@ export async function signInWithCredentials(user: IUserSignIn) {
 
 // 로그아웃
 export const SignOut = async () => {
-  const redirectTo = await signOut({ redirect: false });
-  redirect(redirectTo.redirect);
+  await signOut({ redirect: false });
+  redirect('/sign-in'); // 로그아웃 후 항상 로그인 페이지로 이동
 };
 
 // 모든 회원 정보 가져오기
@@ -67,6 +67,7 @@ export async function getAllUsersLimit({
 // 회원가입
 export async function registerUser(userSignUp: IUserSignUp) {
   try {
+    // 유효성 검사
     const user = await UserSignUpSchema.parseAsync({
       name: userSignUp.name,
       email: userSignUp.email,
@@ -75,11 +76,21 @@ export async function registerUser(userSignUp: IUserSignUp) {
       image: userSignUp.image,
     });
 
+    // 데이타베이스 접속
+    await connectToDatabase();
+
+    // 이메일 중복 확인
+    const existingUser = await User.findOne({ email: user.email });
+    if (existingUser) {
+      return { success: false, error: '이메일이 이미 존재합니다.' }; // 중복 이메일 메시지 반환
+    }
+
+    // 기본 프로필 이미지 설정
     const num = Math.floor(Math.random() * 10) + 1;
     const formattedNum = String(num).padStart(2, '0');
     const defaultImage = `/face/face${formattedNum}.jpg`;
 
-    await connectToDatabase();
+    // 회원 데이터 저장
     await User.create({
       ...user,
       password: await bcrypt.hash(user.password, 10),
