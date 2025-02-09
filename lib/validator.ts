@@ -50,3 +50,7 @@ export const UserSignUpSchema = UserSignInSchema.extend({
   message: '패스워드가 일치하지 않습니다.',
   path: ['confirmPassword'],
 });
+
+export const UserNameSchema = z.object({
+  name: UserName,
+});

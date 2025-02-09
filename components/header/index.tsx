@@ -19,7 +19,7 @@ export default function Header() {
           >
             <span className='mr-[-0.5vw] inline-block'>ye</span>
             <MdStars className='animate-color' />
-            <span className='ml-[-0.5vw] inline-block'>hang</span>
+            <span className='ml-[-0.5vw] inline-block'>haeng</span>
           </Link>
         </div>
 

@@ -1,7 +1,7 @@
 'use server';
 
-import { signIn, signOut } from '@/auth';
-import { IUserSignIn, IUserSignUp } from '@/lib/types';
+import { auth, signIn, signOut } from '@/auth';
+import { IUserName, IUserSignIn, IUserSignUp } from '@/lib/types';
 import { redirect } from 'next/navigation';
 import { connectToDatabase } from '../db';
 import { formatError } from '../utils';
@@ -113,6 +113,25 @@ export async function deleteUser(id: string) {
     return {
       success: true,
       message: '사용자를 삭제하였습니다.',
+    };
+  } catch (error) {
+    return { success: false, message: formatError(error) };
+  }
+}
+
+// 회원 이름 업데이트
+export async function updateUserName(user: IUserName) {
+  try {
+    await connectToDatabase();
+    const session = await auth();
+    const currentUser = await User.findById(session?.user?.id);
+    if (!currentUser) throw new Error('회원을 찾을 수 없습니다.');
+    currentUser.name = user.name;
+    const updatedUser = await currentUser.save();
+    return {
+      success: true,
+      message: '사용자 이름이 변경되었습니다.',
+      data: JSON.parse(JSON.stringify(updatedUser)),
     };
   } catch (error) {
     return { success: false, message: formatError(error) };

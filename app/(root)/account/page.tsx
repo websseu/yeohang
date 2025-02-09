@@ -1,19 +1,21 @@
 import { auth } from '@/auth';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import ProfileForm from '@/components/account/profile-form';
+import { SessionProvider } from 'next-auth/react';
 
 export default async function AccountPage() {
   const session = await auth();
 
   return (
     <>
-      {session?.user ? (
+      <SessionProvider session={session}>
         <section>
           <h2 className='text-xl font-nexon text-center mb-4'>
-            내 정보 <span className='small'>{session.user.visitCount}</span>
+            내 정보 <span className='small'>{session?.user.visitCount}</span>
           </h2>
           <div className='flex flex-col items-center justify-center'>
-            {session.user.image && (
+            {session?.user.image && (
               <Image
                 src={session.user.image}
                 alt={session.user.name || ''}
@@ -23,21 +25,17 @@ export default async function AccountPage() {
               />
             )}
             <ul className='mt-3 text-center'>
-              <li className='text-black200 font-bold'>{session.user.name}</li>
-              <li className='text-muted-foreground'>{session.user.email}</li>
+              <li className='text-black200 font-bold'>{session?.user.name}</li>
+              <li className='text-muted-foreground'>{session?.user.email}</li>
             </ul>
           </div>
           <div className='flex items-center gap-2 justify-center mt-8'>
-            <Button variant='outline'>이름 변경</Button>
+            <ProfileForm />
             <Button variant='outline'>비밀번호 변경</Button>
             <Button variant='outline'>회원 탈퇴</Button>
           </div>
         </section>
-      ) : (
-        <p className='text-sm text-muted-foreground mt-4'>
-          로그인한 사용자가 없습니다.
-        </p>
-      )}
+      </SessionProvider>
     </>
   );
 }
